@@ -1,0 +1,62 @@
+.container {
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background: linear-gradient(to top left, #f3a8a8, #f06767);
+}
+.form {
+  width: 35rem;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to top left, #a6cceb, #539ce0);
+  padding: 2rem;
+  gap: 2rem;
+  border-radius: 0.4rem;
+}
+.heading {
+  text-align: center;
+  color: #2f3031;
+}
+.input-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.input-controls label {
+  font-size: 1.6rem;
+  color: #212529;
+}
+.input-controls input {
+  padding: 1rem;
+  outline: 0;
+  border: 0;
+  font-size: 1.4rem;
+  border-radius: 0.4rem;
+  background-color: #f1f3f5;
+}
+
+.btn {
+  width: 100%;
+  padding: 1rem;
+  border: 0;
+  font-size: 1.6rem;
+  border-radius: 0.4rem;
+  background: linear-gradient(to top left, #ffc9c9, #fa5252);
+  color: #f8f9fa;
+  cursor: pointer;
+}
+.error {
+  font-size: 1.4rem;
+  color: red;
+  text-align: center;
+  font-weight: bold;
+}
+.check {
+  text-align: center;
+  font-size: 1.4rem;
+}
+.check a {
+  text-decoration: none;
+  color: #e03131;
+}
