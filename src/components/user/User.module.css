@@ -60,3 +60,15 @@
   text-decoration: none;
   color: #e03131;
 }
+.inp-toggle {
+  display: flex;
+}
+.inp-toggle input {
+  width: 100%;
+}
+.inp-toggle span {
+  font-size: 1.6rem;
+  color: #2f3031;
+  margin-left: -3rem;
+  margin-top: 1rem;
+}

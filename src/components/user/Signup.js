@@ -1,8 +1,35 @@
 import React, { useState } from 'react'
 import classes from './User.module.css'
 import { Link, useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons';
 
 const Signup = () => {
+
+    const [type, setType] = useState("password");
+    const [icons, setIcons] = useState(faEyeSlash);
+    const [type2, setType2] = useState("password");
+    const [icons2, setIcons2] = useState(faEyeSlash);
+
+    const toggleHandler = () => {
+        if (type === "password") {
+            setIcons(faEye)
+            setType("text")
+        } else {
+            setIcons(faEyeSlash)
+            setType("password")
+        }
+
+    }
+    const toggleHandler2 = () => {
+        if (type2 === "password") {
+            setIcons2(faEye)
+            setType2("text")
+        } else {
+            setIcons2(faEyeSlash)
+            setType2("password")
+        }
+    }
     const navigate = useNavigate();
     const [err, setErr] = useState("")
     const [userDetails, setUserDetails] = useState({
@@ -45,12 +72,18 @@ const Signup = () => {
 
                 <div className={classes["input-controls"]}>
                     <label htmlFor='password'>Password:</label>
-                    <input type="password" name='password' placeholder='Enter password' onChange={changeHandler} />
+                    <div className={classes["inp-toggle"]}>
+                        <input type={type} name='password' placeholder='Enter password' onChange={changeHandler} />
+                        <span onClick={toggleHandler} ><FontAwesomeIcon icon={icons} /></span>
+                    </div>
                 </div>
 
                 <div className={classes["input-controls"]}>
                     <label htmlFor='cpassword'>Confirm Password:</label>
-                    <input type="password" name='cpassword' placeholder='Confirm password' onChange={changeHandler} />
+                    <div className={classes["inp-toggle"]}>
+                        <input type={type2} name='cpassword' placeholder='Confirm password' onChange={changeHandler} />
+                        <span onClick={toggleHandler2}><FontAwesomeIcon icon={icons2} /></span>
+                    </div>
                 </div>
 
                 <div className={classes["action-controls"]}>

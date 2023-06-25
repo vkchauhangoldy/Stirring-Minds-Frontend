@@ -1,8 +1,22 @@
 import React, { useState } from 'react'
 import classes from './User.module.css'
 import { Link, useNavigate } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons';
 
 const Signin = () => {
+    const [type, setType] = useState("password");
+    const [icons, setIcons] = useState(faEyeSlash);
+
+    const toggleHandler = () => {
+        if (type === "password") {
+            setIcons(faEye);
+            setType("text");
+        } else {
+            setIcons(faEyeSlash);
+            setType("password");
+        }
+    }
 
     const navigate = useNavigate();
     const [err, setErr] = useState("");
@@ -46,7 +60,10 @@ const Signin = () => {
 
                 <div className={classes["input-controls"]}>
                     <label htmlFor='password'>Password:</label>
-                    <input type="password" name='password' placeholder='Enter password' onChange={changeHandler} />
+                    <div className={classes["inp-toggle"]}>
+                        <input type={type} name='password' placeholder='Enter password' onChange={changeHandler} />
+                        <span onClick={toggleHandler} ><FontAwesomeIcon icon={icons} /></span>
+                    </div>
                 </div>
 
                 <div className={classes["action-controls"]}>
